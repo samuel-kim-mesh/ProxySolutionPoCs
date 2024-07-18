@@ -1,0 +1,6 @@
+@OxylabsPoC_HostAddress = http://localhost:5150
+
+GET {{OxylabsPoC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

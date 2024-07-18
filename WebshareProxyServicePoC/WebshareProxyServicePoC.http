@@ -1,0 +1,6 @@
+@WebshareProxyServicePoC_HostAddress = http://localhost:5048
+
+GET {{WebshareProxyServicePoC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
