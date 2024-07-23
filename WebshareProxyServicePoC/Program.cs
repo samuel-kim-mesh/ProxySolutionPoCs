@@ -2,11 +2,14 @@ using WebshareProxyServicePoC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddHttpClient<IProxyService, ProxyService>();
+builder.Services.AddControllers();
+builder.Services.AddMemoryCache();
+builder.Services.AddHttpClient();
+builder.Services.AddTransient<IProxyService, ProxyService>();
+builder.Services.AddTransient<IProxyRequestExecutor, ProxyRequestExecutor>();
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
